@@ -1,0 +1,51 @@
+package stack_queue.programmers.truck;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Truck {
+
+	public static void main(String[] args) {
+		solution(2, 10, new int[] { 7, 4, 5, 6 });
+	}
+
+	public static int solution(int bridge_length, int weight, int[] truck_weights) {
+		
+		Queue<Integer> queue = new LinkedList<Integer>();   // 다리
+		queue.offer(0);
+		
+		int answer = 0;
+		int sum_weight = 0; // 다리 위의 무게
+		int idx = 0;        // 트럭 index
+		
+		while(!queue.isEmpty()) { 
+			int val = 0;
+			
+			//다리 탑승 모듈
+			if( bridge_length > queue.size() ) {
+				int truck = truck_weights[idx]; // 트럭 출발
+				sum_weight += truck;            // 다리 위의 트럭 총 무게
+				
+				if(weight >= sum_weight) {
+					queue.offer(truck);
+					idx++;
+				}else {
+					queue.offer(0);
+				}
+			}else {
+				val = queue.poll();
+				System.out.println(val);
+			}
+
+			//도착 모듈
+			if(val != 0) {
+				sum_weight -= val;
+			}
+			
+			answer++;
+		}
+		
+		System.out.println(answer);
+		return answer;
+	}
+}

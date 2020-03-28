@@ -1,0 +1,37 @@
+package stack_queue.programmers.truck;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Truck {
+
+	public static void main(String[] args) {
+
+		solution(2, 10, new int[] { 7, 4, 5, 6 });
+
+	}
+
+	public static int solution(int bridge_length, int weight, int[] truck_weights) {
+		Queue<Integer> queue = new LinkedList<Integer>();
+		
+		int answer = 0;
+		int idx = 0;
+		
+		while(queue.size() != truck_weights.length) {
+
+			int sum_weight = truck_weights[idx];
+			
+			if(truck_weights[idx] > weight) {
+				queue.offer(truck_weights[idx]);
+				idx++;
+			}
+			
+			
+			
+			
+			answer++;
+		}
+		
+		return answer;
+	}
+}
