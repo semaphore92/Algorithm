@@ -1,0 +1,60 @@
+package stack_queue.programmers;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Tower {
+
+	public static void main(String[] args) {
+		solution(new int[] { 6, 9, 5, 7, 4 });
+	}
+
+	public static int[] solution(int[] heights) {
+		Queue<Integer> queue = new LinkedList<Integer>();
+		
+		int[] answer = new int[heights.length];
+		int size = heights.length - 1 ;
+
+		// Queue Setting
+		for (int i = size; 0 <= i ; i--) {
+			queue.offer(heights[i]);
+		}
+		
+		while(!queue.isEmpty()) {
+			System.out.println();
+			int first = queue.poll();
+			int second = queue.peek();
+			int qSize = queue.size();
+			
+			while(qSize != 0) {
+
+				System.out.println("qSize : " + qSize);
+				System.out.println("-------------");
+				System.out.println("first : " + first);
+				System.out.println("second : " + second);
+
+				if( second > first ) {
+					answer[size] = qSize;
+					break;
+				}else {
+					qSize--;
+				}
+				
+				
+			}	
+			
+			size--;
+		}
+		
+		
+		
+		
+		
+		
+		
+
+		
+
+		return answer;
+	}
+}
