@@ -1,0 +1,83 @@
+package stack_queue.programmers.performance;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Performance {
+	
+	class Develop{
+		int progresses;
+		int speeds;
+		int idx = 1;
+		
+		public Develop(int progresses, int speeds) {
+			this.progresses = progresses;
+			this.speeds = speeds;
+			this.idx ++;
+			
+		}
+		
+		public void commit() {
+			progresses += speeds;
+		}
+
+		public int getProgresses() {
+			return progresses;
+		}
+
+		public int getSpeeds() {
+			return speeds;
+		}
+
+		public int getIdx() {
+			return idx;
+		}
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		Performance performance = new Performance();
+		performance.solution(new int[]{93,30,55},new int[] {1,30,5});
+	}
+	
+
+	 public int[] solution(int[] progresses, int[] speeds) {
+	        int[] answer = {};
+	        
+	        Queue<Develop> queue = new LinkedList<>();
+	        int cnt = 1;
+	        
+	        //Queue Setting
+	        for (int i = 0 ; i <  progresses.length ; i++) {
+	        	queue.offer(new Develop(progresses[i], speeds[i]));
+	        }
+	        
+	        while(!queue.isEmpty()) {
+	        	for(Develop t : queue) {
+	        		Develop develop = queue.poll();
+	        		develop.commit();
+	        		
+	        		int progress = develop.getProgresses();
+	        		int index    = develop.getIdx();
+	        		
+	        		if(progress > 100 & index == cnt) {
+	        			for(Develop t2 : queue) {
+	        				
+	        				
+	        				
+	        			}
+	        			
+	        		}
+	 
+	        		queue.offer(develop);
+	        	}
+	        	
+	        	
+	        	
+	        }
+	        
+	        return answer;
+	    }
+}

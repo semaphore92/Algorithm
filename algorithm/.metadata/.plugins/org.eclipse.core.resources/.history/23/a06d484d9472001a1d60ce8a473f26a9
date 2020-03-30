@@ -1,0 +1,96 @@
+package stack_queue.programmers.performance;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Performance {
+
+	class Develop {
+		int progresses;
+		int speeds;
+		int idx;
+
+		public Develop(int progresses, int speeds, int idx) {
+			this.progresses = progresses;
+			this.speeds = speeds;
+			this.idx = idx;
+		}
+
+		public void commit() {
+			progresses += speeds;
+		}
+
+		public int getProgresses() {
+			return progresses;
+		}
+
+		public int getSpeeds() {
+			return speeds;
+		}
+
+		public int getIdx() {
+			return idx;
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		Performance performance = new Performance();
+		performance.solution(new int[] { 93 , 30 , 55 , 60 }, new int[] { 1, 30 , 5 , 40  });
+	}
+
+	public int[] solution(int[] progresses, int[] speeds) {
+		Queue<Develop> queue = new LinkedList<>();
+		Queue<Develop> queue2 = new LinkedList<>();
+		Queue<Integer> queue3 = new LinkedList<>();
+
+		int forwardVal = 0;   
+		int recentlyWorkkVal = 0;
+
+		// Queue Setting
+		for (int i = 0; i < progresses.length; i++) {
+			queue.offer(new Develop(progresses[i], speeds[i], i));
+		}
+
+		while (!queue.isEmpty()) {
+			Develop develop = queue.poll();
+			// 개발 진행
+			develop.commit();
+			int progress = develop.getProgresses();
+			int index    = develop.getIdx();
+
+			// 개발 완료된 건 보관
+			if (progress >= 100 & index == forwardVal) {
+				queue2.offer(develop);
+			} else {
+				queue.offer(develop);
+			}
+			
+
+			// 100% 개발 건 내보내기
+			for (Develop t2 : queue2) {
+				int index = t2.getIdx();
+				// 가장 최근 건과 index가 일치하면
+				if (index == forwardVal) {
+					
+					
+					
+					// queue2의 Size만큼 넣는다
+					queue3.offer(queue2.size());
+					queue2.clear();
+				}
+
+			}
+
+		}
+
+		int[] answer = new int[queue3.size()];
+		for (int i = 0; i < answer.length; i++) {
+			System.out.println(queue3.peek());
+			answer[i] = queue3.poll();
+		}
+
+		return answer;
+	}
+}

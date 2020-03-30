@@ -1,0 +1,15 @@
+package stack_queue.programmers.performance;
+
+public class Performance {
+	
+	
+	public static void main(String[] args) {
+		solution(new int[]{93,30,55},new int[] {1,30,5});
+	}
+	
+
+	 public static int[] solution(int[] progresses, int[] speeds) {
+	        int[] answer = {};
+	        return answer;
+	    }
+}
