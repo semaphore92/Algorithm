@@ -1,0 +1,43 @@
+package sorting.programmers;
+
+public class Solution_Maximum {
+	
+	class Tower {
+        int idx;
+        int value;
+
+        public Tower(int idx, int height) {
+            this.idx = idx;
+            this.height = height;
+        }
+
+        @Override
+        public String toString() {
+            return "idx : " + idx + " height : " + height;
+        }
+    }
+	
+	
+	public static void main(String[] args) {
+		new Solution_Maximum().solution(new int[] {6,10,2});
+	}
+	
+	 public void solution(int[] numbers) {
+		 
+		 	int[] number_temp = new int[numbers.length];
+	     	
+		 	// 값/10 = 나머지 
+		 	for(int i = 0; i < numbers.length; i ++) {
+		 		number_temp[i] = numbers[i]%10;
+		 		System.out.println(numbers[i]%10);
+		 	}
+		 	
+		 	
+		 	
+		 	
+		 	
+		 
+		 
+	        
+	    }
+}

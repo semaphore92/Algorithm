@@ -1,0 +1,14 @@
+package sorting.programmers;
+
+public class Solution_Maximum {
+	
+	
+	public static void main(String[] args) {
+		new Solution_Maximum().solution(new int[] {6,10,2});
+	}
+	
+	 public String solution(int[] numbers) {
+	        String answer = "";
+	        return answer;
+	    }
+}

@@ -1,0 +1,37 @@
+package sorting.programmers;
+
+public class Solution_Maximum {
+	
+	class Value {
+        int rest;
+        int value;
+
+        public Value(int rest, int value) {
+            this.rest = rest;
+            this.value = value;
+        }
+    }
+	
+	public static void main(String[] args) {
+		new Solution_Maximum().solution(new int[] {6,10,2});
+	}
+	
+	 public void solution(int[] numbers) {
+		 
+		 	Value[] value_array = new Value[numbers.length];
+	     	
+		 	// 값/10 = 나머지 
+		 	for(int i = 0; i < numbers.length; i ++) {
+		 		Value value = new Value(numbers[i]%10, numbers[i]);
+		 		value_array[i] = value;
+		 	}
+		 	
+		 	
+		 	
+		 	
+		 	
+		 
+		 
+	        
+	    }
+}

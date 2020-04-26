@@ -1,0 +1,23 @@
+package sorting.programmers;
+
+public class Solution_K {
+
+	public static void main(String[] args) {
+		int a[] = new int[] {1,5,2,6,3,7,4};
+		
+		new Solution_K().test(a,2,5,3);
+		
+	}
+	
+	public void test(int [] a , int i , int j ,int k) {
+		
+		int [] b = new int[j-i];
+		int cnt = 0;
+		
+		for(int s = i-1; i<j-1; i++) {
+			b[cnt] = a[s];
+			cnt ++;
+		}
+		
+	}
+}

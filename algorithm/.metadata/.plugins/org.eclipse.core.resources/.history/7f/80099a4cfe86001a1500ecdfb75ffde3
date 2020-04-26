@@ -1,0 +1,14 @@
+package sorting.programmers;
+
+public class Solution_K {
+
+	public static void main(String[] args) {
+		int a[] = new int[] {1,5,2,6,3,7,4};
+		
+	}
+	
+	public void test() {
+		
+		
+	}
+}
