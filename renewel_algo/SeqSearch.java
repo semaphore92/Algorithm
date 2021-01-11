@@ -1,7 +1,6 @@
-import java.util.Scanner;
-
 
 public class SeqSearch {
+
     public static void main(String[] args) {
         int num = 5;
         int[] x = new int[6];
@@ -10,7 +9,7 @@ public class SeqSearch {
             x[i] = i+1;
         }
 
-        int key = 1;
+        int key = 3;
         int idx = SeqSearchSen(x, num, key);
 
         System.out.println(idx);
@@ -21,6 +20,14 @@ public class SeqSearch {
         int i = 0;
         a[n] = key;
 
+        for(i = 0; i < a.length; i ++){
+            if(a[i] == key){
+                break;
+            }
+            i++;
+        }
+
+        /*
         while(true){
             if(a[i] == key){
                 System.out.println(i);
@@ -28,6 +35,8 @@ public class SeqSearch {
             }
             i++;
         }
+        */
+
         return i == n ?-1:i;
     }
 }

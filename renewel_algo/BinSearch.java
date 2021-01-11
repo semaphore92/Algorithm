@@ -19,6 +19,7 @@ public class BinSearch {
         int pl = 0;
         int pr = n - 1;
 
+
         do {
             int pc = (pl + pr) / 2;
             // 중앙 기준 값이 키 값과 같으면 바로 Return
