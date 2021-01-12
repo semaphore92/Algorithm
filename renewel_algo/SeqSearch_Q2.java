@@ -1,6 +1,6 @@
 
 public class SeqSearch_Q2 {
-
+a
     public static void main(String[] args) {
         int num = 6;
         int[] x = new int[6];
