@@ -9,7 +9,16 @@ public class ReCur_Q2 {
     }
 
     public static void main(String[] args) {
-        System.out.println(gcd(8,22));
+        int y = 8;
+        int x = 22;
+        while (y != 0) {
+			int temp = y;
+			y = x % y;
+            x = temp;
+            System.out.println(y);
+		}
+        
+        System.out.println(x);
     }
   
 }
