@@ -12,7 +12,7 @@ public class InsertionSort_Q7 {
             int pr = i-1; // 검색범위 맨 뒤의 인덱스
             int pc; // 중앙 인덱스
             int pd; // 삽입하는 위치의 인덱스
-
+   
             // 이진 검색
             do{
                 pc = (pl+pr) /2;
