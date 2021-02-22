@@ -2,7 +2,6 @@ public class Partition {
 
     public static void main(String[] args) {
         int[] arr = {10,50,80,90,70};
-
         quick_Sort(arr,0,arr.length-1);
     }
     private static void quick_Sort(int[] arr, int start, int end){
