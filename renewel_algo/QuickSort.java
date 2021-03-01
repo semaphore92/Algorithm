@@ -1,7 +1,5 @@
 import java.util.Arrays;
 
-import javax.lang.model.element.Element;
-
 public class QuickSort {
     static void swap(int[] a, int idx1, int idx2){
         int t = a[idx1]; 
