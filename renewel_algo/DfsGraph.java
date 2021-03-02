@@ -15,6 +15,8 @@ class DfsGraph {
     // 그래프 초기화 생성자
     public DfsGraph(int nV) {
         this.nV = nV;    // 정점 개수 초기화
+        
+        // ArrayList
         this.dfsGraph = new ArrayList<ArrayList<Integer>>(); // 그래프 생성
         
         // 그래프 초기화
@@ -180,6 +182,3 @@ public class DFSAdjList {
         dfsGraph.dfs(8);
     }
 }
-
-
-출처: https://freestrokes.tistory.com/88 [FREESTROKES DEVLOG]
