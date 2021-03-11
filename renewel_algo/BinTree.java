@@ -1,5 +1,23 @@
 import java.util.Comparator;
 
+/*
+이진트리검색이란
+
+이진탐색과 연결리스틀 결합한 자료구종으일종
+
+이진탐색의 경우
+O(log n)으로 ㅃ ㅏ르지만 자료 입력 삭제가 불가능합니다.
+
+연결리스트의 경우 입력 삭제에 계산복잡성은 O(1)이지만 탐색하는데는 O(n)의 계산복잡석이 발생
+
+이진 탐색과 연결리스트를 합쳐보자
+이 둘을 합쳐보자
+
+
+중위순휘 
+
+왼쪽 노드 오른쪽
+*/
 public class BinTree<K, V> {
 
     // 루트
@@ -21,6 +39,31 @@ public class BinTree<K, V> {
         return (comparator == null) ? ((Comparable<K>)key1).compareTo(key2) : comparator.compare(key1,key2);
     }
 
+    public boolean remove(K key){
+        Node<K,V> p = root;
+        Node<K,V> parent = null;
+        boolean isLeftChild = true;
+
+        while(true){
+            if(p == null){
+                return false;
+            }
+            int cond = comp(key, p.getKey());
+
+            if(cond == 0){
+                break;
+            }else{
+                parent = p;
+                if(cond < 0){
+                    isLeftChild = true;
+                    p = p.left;
+                }else {
+                    isLeftChild = false;
+                    p = p.right;
+                }
+            }
+        }
+    }
     public V search(K key){
         Node<K,V> p = root;
 
